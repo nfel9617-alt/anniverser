@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>شاركوني فرحة يوم ميلادي والمبادرة الإبداعية</title>
   
-  <!-- الخطوط الرسمية والأيقونات الهندسية الراقية -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -17,7 +16,6 @@
       --card-bg: rgba(255, 255, 255, 0.85);
       --accent-primary: #4f46e5;
       --accent-secondary: #7c3aed;
-      --accent-gold: #b45309;
       --text-main: #1e293b;
       --text-muted: #64748b;
       --border-color: rgba(226, 232, 240, 0.8);
@@ -31,11 +29,9 @@
       overflow-x: hidden;
     }
 
-    /* القسم العلوي المبهج */
     .hero-section {
       text-align: center;
       padding: 70px 20px 50px 20px;
-      position: relative;
     }
     .hero-section h1 {
       font-weight: 800;
@@ -54,7 +50,6 @@
       font-weight: 600;
     }
 
-    /* تصميم البطاقات الزجاجية المريحة للعين */
     .custom-card {
       background: var(--card-bg);
       backdrop-filter: blur(10px);
@@ -63,7 +58,6 @@
       border-radius: 24px;
       padding: 40px;
       box-shadow: 0 20px 40px rgba(79, 70, 229, 0.05);
-      transition: transform 0.3s ease;
     }
 
     .card-title-custom {
@@ -75,7 +69,6 @@
       padding-right: 12px;
     }
 
-    /* المدخلات وحقول الكتابة */
     .form-label {
       color: var(--text-main);
       font-weight: 700;
@@ -88,7 +81,6 @@
       color: var(--text-main);
       border-radius: 12px;
       padding: 14px;
-      font-size: 0.95rem;
       transition: all 0.3s ease;
     }
     .form-control:focus {
@@ -96,11 +88,7 @@
       border-color: var(--accent-primary);
       box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.12);
     }
-    .form-control::placeholder {
-      color: #94a3b8;
-    }
 
-    /* أزرار الإرسال المبهجة والتفاعلية */
     .btn-submit {
       background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
       color: #fff;
@@ -111,15 +99,12 @@
       transition: all 0.3s ease;
       width: 100%;
       font-size: 1.1rem;
-      box-shadow: 0 10px 20px rgba(124, 58, 237, 0.15);
     }
     .btn-submit:hover {
       transform: translateY(-2px);
-      box-shadow: 0 12px 24px rgba(124, 58, 237, 0.25);
       color: #fff;
     }
 
-    /* تبديل الصفحات العلوية اللطيف */
     .nav-tabs-custom {
       display: flex;
       justify-content: center;
@@ -134,23 +119,19 @@
       border-radius: 30px;
       font-weight: 700;
       transition: all 0.3s ease;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
     }
     .tab-btn.active {
       background: #fff;
       border-color: var(--accent-primary);
       color: var(--accent-primary);
-      box-shadow: 0 8px 16px rgba(79, 70, 229, 0.08);
     }
 
-    /* عرض الرسائل والتهاني المستلمة */
     .message-item {
       background: #fff;
       border: 1px solid var(--border-color);
       border-radius: 16px;
       padding: 25px;
       margin-bottom: 20px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.01);
     }
     .message-meta {
       display: flex;
@@ -184,32 +165,31 @@
       border-radius: 10px;
       border: 1px solid #f1f5f9;
     }
+    .loader { border: 3px solid #f3f3f3; border-top: 3px solid var(--accent-primary); border-radius: 50%; width: 30px; height: 30px; animation: spin 1s linear infinite; margin: 20px auto; }
+    @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
   </style>
 </head>
 <body>
 
-  <!-- واجهة الهيدر الترحيبية المبهجة -->
   <header class="hero-section">
     <div class="container">
-      <h1>مساحة التهنئة </h1>
+      <h1>مساحة التهنئة السنوية والمبادرة الخاصة</h1>
       <p>بمناسبة يوم ميلادي، يسعدني جداً أن أستقبل كلماتكم الطيبة ومشاركتكم لي هذه الذكرى السعيدة. وكتعبير عن امتناني وتقديري لكل الأصدقاء والمقربين، سأختار شخصين من أصحاب الرسائل لأقوم بتطوير وبناء المنصة الرقمية أو الموقع الذي يحلمون به بجميع تفاصيله ومواصفاته الشخصية مجاناً.</p>
     </div>
   </header>
 
   <div class="container mb-5" style="max-width: 850px;">
     
-    <!-- أزرار التنقل بين كتابة الرسائل واستعراضها -->
     <div class="nav-tabs-custom">
       <button class="tab-btn active" id="btn-form" onclick="switchView('form')">
         <i class="fa-solid fa-feather-pointed me-2"></i> كتابة تهنئة جديدة
       </button>
       <button class="tab-btn" id="btn-admin" onclick="switchView('admin')">
         <i class="fa-solid fa-box-archive me-2"></i> صندوق المهنئين والمقترحات 
-        <span class="badge bg-primary ms-1" id="count-badge" style="background-color: var(--accent-primary) !important;">0</span>
       </button>
     </div>
 
-    <!-- استمارة إرسال المشاركة -->
+    <!-- استمارة الإرسال -->
     <div id="view-form" class="custom-card">
       <h3 class="card-title-custom">إرسال تهنئة ومقترح مشروع</h3>
       <form id="submissionForm" onsubmit="handleSubmit(event)">
@@ -217,158 +197,105 @@
           <label class="form-label">الاسم الكامل</label>
           <input type="text" id="memberName" class="form-control" required placeholder="اكتب اسمك هنا">
         </div>
-
         <div class="mb-3">
-          <label class="form-label">كلمتك بمناسبة يوم ميلادي</label>
-          <textarea id="wishesMessage" class="form-control" rows="4" required placeholder="اكتب رسالتك أو مشاعرك الخاصة هنا..."></textarea>
+          <label class="form-label">كلمتك أو رسالة التهنئة بمناسبة يوم ميلادي</label>
+          <textarea id="wishesMessage" class="form-control" rows="4" required placeholder="اكتب رسالتك هنا..."></textarea>
         </div>
-
         <div class="mb-4">
           <label class="form-label">تفاصيل المنصة التي ترغب في أن أطورها لك بالكامل</label>
-          <textarea id="platformDetails" class="form-control" rows="4" required placeholder="اشرح فكرة الموقع أو المنصة، الهدف منها، والخصائص التي تريد توفرها فيها بالتفصيل..."></textarea>
+          <textarea id="platformDetails" class="form-control" rows="4" required placeholder="اشرح فكرة الموقع أو المنصة بالتفصيل..."></textarea>
         </div>
-
         <button type="submit" class="btn btn-submit">
           <i class="fa-solid fa-paper-plane me-2"></i> إرسال التهاني والمقترح
         </button>
       </form>
     </div>
 
-    <!-- لوحة استعراض كل الإجابات والتهاني -->
+    <!-- لوحة عرض الرسائل من السيرفر الموحد -->
     <div id="view-admin" class="custom-card d-none">
-      <div class="d-flex justify-content-between align-items-center mb-4">
-        <h3 class="card-title-custom m-0">الرسائل والمقترحات التي وصلتني</h3>
-        <button class="btn btn-outline-danger btn-sm rounded-pill px-3" onclick="clearAllData()">
-          <i class="fa-solid fa-trash-can me-1"></i> إفراغ الصندوق
-        </button>
+      <h3 class="card-title-custom mb-4">الرسائل والمقترحات المستلمة سحابياً</h3>
+      <div id="loading" class="text-center d-none">
+        <div class="loader"></div>
+        <p class="text-muted small">جاري جلب الرسائل من قاعدة البيانات...</p>
       </div>
-      
-      <div id="no-messages-alert" class="text-center py-5 text-muted">
+      <div id="no-messages-alert" class="text-center py-5 text-muted d-none">
         <i class="fa-solid fa-envelope-open fa-3x mb-3" style="color: #cbd5e1;"></i>
         <p class="fw-bold">لم تصل أي رسائل أو مقترحات حتى الآن.</p>
       </div>
-
       <div id="messages-container"></div>
     </div>
 
   </div>
 
   <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      updateCountBadge();
-      loadMessagesInAdmin();
-    });
+    // ضع هنا رابط غوغل سكريبت المستخرج بعد النشر (Deploy) ليعمل كـ API مشترك
+    const API_URL = "https://script.google.com/macros/s/AKfycbwSToRJ0iYsffJFuS5WVwdgfGuj4JIvbhXYv7JSQVS6lTSDr0mI7LtgAAjY9pCJJ4BJ/exec"; 
 
-    // دالة التبديل البصري السلس والمبهج
     function switchView(view) {
       document.getElementById('btn-form').classList.toggle('active', view === 'form');
       document.getElementById('btn-admin').classList.toggle('active', view === 'admin');
-      
       document.getElementById('view-form').classList.toggle('d-none', view !== 'form');
       document.getElementById('view-admin').classList.toggle('d-none', view !== 'admin');
       
-      if(view === 'admin') {
-        loadMessagesInAdmin();
-      }
+      if(view === 'admin') { loadMessagesFromServer(); }
     }
 
-    // حفظ المشاركات محلياً في ذاكرة التخزين
-    function handleSubmit(e) {
+    async function handleSubmit(e) {
       e.preventDefault();
-      
-      const newSubmission = {
-        id: Date.now(),
+      Swal.fire({ title: 'جاري إرسال التهنئة...', allowOutsideClick: false, didOpen: () => Swal.showLoading() });
+
+      const payload = {
+        action: "submitWishes",
         name: document.getElementById('memberName').value,
         message: document.getElementById('wishesMessage').value,
-        idea: document.getElementById('platformDetails').value,
-        date: new Date().toLocaleDateString('ar-DZ', { year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' })
+        idea: document.getElementById('platformDetails').value
       };
 
-      let existingData = localStorage.getItem('personal_birthday_submissions');
-      let dataArray = existingData ? JSON.parse(existingData) : [];
-      
-      dataArray.unshift(newSubmission);
-      localStorage.setItem('personal_birthday_submissions', JSON.stringify(dataArray));
-
-      document.getElementById('submissionForm').reset();
-      updateCountBadge();
-
-      Swal.fire({
-        title: 'تم استلام تهنئتك بنجاح',
-        text: 'شكراً جزيلاً لك على مشاعرك النبيلة وكلماتك المبهجة، تم حفظ مقترحك بنجاح!',
-        icon: 'success',
-        confirmButtonColor: '#4f46e5',
-        confirmButtonText: 'حسناً'
-      });
+      try {
+        await fetch(API_URL, { method: "POST", body: JSON.stringify(payload) });
+        document.getElementById('submissionForm').reset();
+        Swal.fire({ title: 'شكراً لك!', text: 'تم إرسال تهنئتك وحفظ مقترحك بنجاح في قاعدة البيانات السحابية.', icon: 'success', confirmButtonColor: '#4f46e5' });
+      } catch (err) {
+        Swal.fire({ title: 'عذراً', text: 'فشل الاتصال بالقاعدة السحابية: ' + err.message, icon: 'error' });
+      }
     }
 
-    function updateCountBadge() {
-      let existingData = localStorage.getItem('personal_birthday_submissions');
-      let dataArray = existingData ? JSON.parse(existingData) : [];
-      document.getElementById('count-badge').innerText = dataArray.length;
-    }
-
-    // عرض المشاركات داخل لوحة التحكم لفرزها واختيار الفائزين
-    function loadMessagesInAdmin() {
-      let existingData = localStorage.getItem('personal_birthday_submissions');
-      let dataArray = existingData ? JSON.parse(existingData) : [];
-      
+    async function loadMessagesFromServer() {
       const container = document.getElementById('messages-container');
       const emptyAlert = document.getElementById('no-messages-alert');
+      const loader = document.getElementById('loading');
       
       container.innerHTML = "";
-
-      if(dataArray.length === 0) {
-        emptyAlert.classList.remove('d-none');
-        return;
-      }
-      
+      loader.classList.remove('d-none');
       emptyAlert.classList.add('d-none');
 
-      dataArray.forEach(item => {
-        let card = `
-          <div class="message-item">
-            <div class="message-meta">
-              <div>
-                <span class="member-name">${item.name}</span>
-              </div>
-              <div class="text-muted" style="font-size: 0.8rem; font-weight: 600;">${item.date}</div>
-            </div>
-            
-            <div class="text-section-title"><i class="fa-regular fa-comment text-primary"></i> رسالة التهنئة والمشاعر:</div>
-            <div class="text-content">${item.message}</div>
-            
-            <div class="text-section-title mt-3"><i class="fa-solid fa-code text-secondary"></i> تفاصيل فكرة المنصة المطلوبة:</div>
-            <div class="text-content" style="border-right: 3px solid var(--accent-secondary); background: #faf5ff;">${item.idea}</div>
-          </div>
-        `;
-        container.innerHTML += card;
-      });
-    }
+      try {
+        const response = await fetch(API_URL, { method: "POST", body: JSON.stringify({ action: "getWishes" }) });
+        const resJson = await response.json();
+        loader.classList.add('d-none');
 
-    function clearAllData() {
-      Swal.fire({
-        title: 'تأكيد الحذف الكلي',
-        text: 'هل أنت متأكد من رغبتك في حذف كافة الرسائل والمقترحات المستلمة نهائياً؟',
-        icon: 'warning',
-        showCancelButton: true,
-        confirmButtonColor: '#dc3545',
-        cancelButtonColor: '#64748b',
-        confirmButtonText: 'نعم، احذف الكل',
-        cancelButtonText: 'إلغاء'
-      }).then((result) => {
-        if (result.isConfirmed) {
-          localStorage.removeItem('personal_birthday_submissions');
-          updateCountBadge();
-          loadMessagesInAdmin();
-          Swal.fire({
-            title: 'تم الإفراغ',
-            text: 'تم تنظيف صندوق المقترحات بالكامل.',
-            icon: 'success',
-            confirmButtonColor: '#4f46e5'
-          });
+        if(!resJson.data || resJson.data.length === 0) {
+          emptyAlert.classList.remove('d-none');
+          return;
         }
-      });
+
+        resJson.data.forEach(item => {
+          container.innerHTML += `
+            <div class="message-item">
+              <div class="message-meta">
+                <span class="member-name">${item.name}</span>
+                <div class="text-muted" style="font-size: 0.8rem; font-weight: 600;">${item.date}</div>
+              </div>
+              <div class="text-section-title"><i class="fa-regular fa-comment text-primary"></i> رسالة التهنئة:</div>
+              <div class="text-content">${item.message}</div>
+              <div class="text-section-title mt-3"><i class="fa-solid fa-code text-secondary"></i> تفاصيل فكرة المنصة المطلوبة:</div>
+              <div class="text-content" style="border-right: 3px solid var(--accent-secondary); background: #faf5ff;">${item.idea}</div>
+            </div>`;
+        });
+      } catch (err) {
+        loader.classList.add('d-none');
+        Swal.fire({ title: 'خطأ', text: 'فشل جلب البيانات: ' + err.message, icon: 'error' });
+      }
     }
   </script>
 </body>
